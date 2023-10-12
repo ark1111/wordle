@@ -34,6 +34,7 @@ const Keyboard = ({
         <Row key={item.id}>
           {item.list.map((keyItem, keyIndex) => (
             <RowItem
+              key={keyItem.id}
               onClick={() => selectKey(keyItem.key)}
               $bgColor={statusColorList[checkStatus(keyItem.key)]}
             >

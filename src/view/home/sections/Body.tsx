@@ -46,9 +46,10 @@ const Body = ({ cells, goalWord, endStatus }: Props) => {
         </ResultBox>
       )}
       {cells.map((item) => (
-        <Row>
+        <Row key={item.id}>
           {item.list.map((cellItem, cellIndex) => (
             <RowItem
+              key={cellIndex}
               $bgColor={
                 statusColorList[
                   checkStatus(cellItem, cellIndex, item.isSubmitted)

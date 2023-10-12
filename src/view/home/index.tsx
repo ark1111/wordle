@@ -25,10 +25,12 @@ const Wordle = (props: Props) => {
   const selectKey = (key: string) => {
     const newList = [...cells];
     if (!endStatus) {
-      if (key === "BACK" && activeCellIndex > 0) {
-        //remove letter
-        newList[activeCellsRowIndex].list[activeCellIndex - 1] = "";
-        setActiveCellIndex((oldValue) => oldValue - 1);
+      if (key === "BACK") {
+        if (activeCellIndex > 0) {
+          //remove letter
+          newList[activeCellsRowIndex].list[activeCellIndex - 1] = "";
+          setActiveCellIndex((oldValue) => oldValue - 1);
+        }
       } else if (key === "ENTER") {
         //submit word
         if (activeCellIndex === 5) {
